@@ -129,7 +129,7 @@ class Scratch3OperatorsBlocks {
         return Math.round(Cast.toNumber(args.NUM));
     }
     square (args) {
-        return Math.square(Cast.toNumber(args.NUM));
+        return Cast.toNumber(args.NUM) * Cast.toNumber(args.NUM);
     }
 
     mathop (args) {
