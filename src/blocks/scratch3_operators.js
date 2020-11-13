@@ -33,6 +33,7 @@ class Scratch3OperatorsBlocks {
             operator_contains: this.contains,
             operator_mod: this.mod,
             operator_square:this.square,
+            operator_sqrt:this.squareroot,
             operator_round: this.round,
             operator_mathop: this.mathop
         };
@@ -131,7 +132,12 @@ class Scratch3OperatorsBlocks {
     square (args) {
         return Cast.toNumber(args.NUM) * Cast.toNumber(args.NUM);
     }
-
+    squareroot (args) {
+        const n=Cast.toNumber(args.NUM);
+        if(Math.sign(n)==-1) {return Cast.toString(Math.sqrt(n*(-1)))+'i';} 
+        return Cast.toString(Math.sqrt(n));
+        
+    }
     mathop (args) {
         const operator = Cast.toString(args.OPERATOR).toLowerCase();
         const n = Cast.toNumber(args.NUM);
